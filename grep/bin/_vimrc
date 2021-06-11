@@ -1,0 +1,114 @@
+set nocompatible
+source $VIMRUNTIME/vimrc_example.vim
+"source $VIMRUNTIME/mswin.vim
+"behave mswin
+ 
+set diffexpr=MyDiff()
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  let eq = ''
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      let cmd = '""' . $VIMRUNTIME . '\diff"'
+      let eq = '"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+endfunction
+
+set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf-8,chinese,cp936
+ 
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+language messages zh_CN.utf-8
+ 
+filetype on
+filetype plugin indent on
+colorscheme desert
+set helplang=cn		
+set history=500		
+set guifont=Monaco:h10	
+set tabstop=4		
+set expandtab
+set backspace=2 
+"set nu! 	
+set wrap 
+"set nowrap 
+set linebreak
+"set list 		
+set autochdir 
+set hidden 	
+set scrolloff=5 
+"Toggle Menu and Toolbar 
+"set guioptions-=m
+"set guioptions-=T
+set showtabline=2 	
+set autoread 	
+set tabstop=4         
+set softtabstop=4     
+set shiftwidth=4     
+set expandtab       
+set mouse=a 
+set nobackup 		
+"set go=		
+set guioptions-=T
+"set guioptions-=m
+ 
+"===========================
+
+"===========================
+set hlsearch 
+set incsearch 
+ 
+"===========================
+
+"===========================
+set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%] 
+set ruler 
+ 
+"===========================
+"
+"===========================
+syntax enable 
+syntax on 
+set showmatch 
+set smartindent 
+"set shiftwidth=4 ªÅ®æ
+set autoindent 
+set ai! 
+"set cursorcolumn¦C
+"set cursorline 
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+set guicursor+=a:blinkon0
+set fdm=indent "
+ 
+ 
+map <leader>t :NERDTreeToggle<CR>
+let NERDTreeShowLineNumbers=1
+let NERDTreeAutoCenter=1
+let NERDTreeShowHidden=1
+let NERDTreeWinSize=21
+let g:nerdtree_tabs_open_on_console_startup=1
+let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+let NERDTreeShowBookmarks=1
+
+inoremap { {}<ESC>i 
+hi MatchParen ctermbg=DarkRed guibg=lightblue  
+set clipboard=unnamed
+set number 
+set smartindent

@@ -13,7 +13,9 @@
 - [VIM](https://www.vim.org/) 文件编辑器
 - [bat](https://github.com/sharkdp/bat) 比cat 更好用. bat 支持大量编程和标记语言的语法高亮
 
-
+```bash
+sudo apt-get install fzf fzy silversearcher-ag ripgrep
+```
 ---
 
 - [ack.vim](https://github.com/mileszs/ack.vim)

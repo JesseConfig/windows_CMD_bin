@@ -4,6 +4,8 @@
 
 ## 包含如下工具套件
 
+--add sync 
+
 - [fzf](https://github.com/junegunn/fzf.git) 是一个通用的命令行模糊查找器。
 - [grep for windows](http://gnuwin32.sourceforge.net/packages/grep.htm)在一个或多个输入文件中搜索包含与指定模式匹配的行
 - [Ag](https://github.com/ggreer/the_silver_searcher

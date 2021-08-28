@@ -3,8 +3,16 @@
 ---
 
 ## 包含如下工具套件
-
+--add fd
 --add sync 
+
+https://github.com/phiresky/ripgrep-all/releases/tag/v0.9.6
+http://blog.alivate.com.au/poppler-windows/
+
+
+[Windows fzf vim 脚本](https://github.com/jesse23/with)
+
+- [fd] (https://github.com/sharkdp/fd/releases/tag/v8.2.1)
 
 - [fzf](https://github.com/junegunn/fzf.git) 是一个通用的命令行模糊查找器。
 - [grep for windows](http://gnuwin32.sourceforge.net/packages/grep.htm)在一个或多个输入文件中搜索包含与指定模式匹配的行
